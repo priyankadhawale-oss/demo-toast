@@ -1,6 +1,7 @@
 // Component3.js
-import React, { useState } from 'react';
 
+import React, { useState } from 'react';
+import './Component3.css';
 const Component3 = ({ addToast }) => {
   const [inputValue, setInputValue] = useState('');
   const [countdown, setCountdown] = useState(0);
@@ -11,27 +12,36 @@ const Component3 = ({ addToast }) => {
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
-
+  
   const handleClick = async () => {
     const seconds = parseInt(inputValue, 10);
-
+    
     if (!isNaN(seconds)) {
-      addToast(`Reverse count started for ${seconds} seconds`);
-
       setCountdown(seconds);
-
       const intervalId = setInterval(() => {
-        addToast(`Countdown: ${countdown} seconds`);
-        setCountdown((prevCount) => prevCount - 1);
-
-        if (countdown <= 0) {
-          clearInterval(intervalId);
-          // Make API call here
-          fetchData();
-        }
+        setCountdown((prevCount) => {
+          addToast(`${prevCount} :1`);
+  
+          if (prevCount <= 1) {
+            clearInterval(intervalId);
+            // Make API call here
+            /* let x= setTimeout(start,2000);
+            function start(){
+            document.write("fetching data, please wait");
+            clearTimeout(x);
+            
+            fetchData();
+            } */
+            fetchData();
+            
+            return 0; // Reset countdown to 0 after reaching 1
+          }
+  
+          return prevCount - 1;
+        });
       }, 1000);
     }
-  };
+  }; 
 
   const fetchData = async () => {
     try {
@@ -41,10 +51,7 @@ const Component3 = ({ addToast }) => {
       const data = await response.json();
 
       if (data.status && data.responseData) {
-        setCountries(data.responseData);
-        addToast('API call successful. Displaying countries:');
-      } else {
-        addToast('API call successful, but no country data found.');
+        setCountries(data.responseData);        
       }
     } catch (error) {
       addToast('Error fetching data from the API');
@@ -67,32 +74,23 @@ const Component3 = ({ addToast }) => {
   };
 
   return (
-    <div>
-        <form>
-            <table>
-                <tr>
-      <th><label htmlFor="countdownInput">Enter Countdown Time:</label></th></tr>
-      <tr><td><input
+    <div className='component3'>
+      <div>
+      <div className='title'>Enter Countdown Time</div>
+      <div><input
         type="number"
-        id="countdownInput"
         placeholder="Enter Here"
         value={inputValue}
         onChange={handleInputChange}
-        style={{ width: '100%' }}
-      /></td></tr>
-      <tr>
-      <button
-        onClick={handleClick}
-        style={{ backgroundColor: '#959FF8', color: '#fff', width: '100%', borderRadius:'10px', boxSizing:'border-box' }}
-      >
-        Start Timer
-      </button>
-      </tr>
-      </table>
-      </form>
+        className='input-type'
+      /></div>
+      <div><button onClick={handleClick} className='toast-button2'>Start Time</button></div>
+      </div>
+      
       <div>
+        
         <ul>
-          <h2>Countries</h2>
+        <h2>Countries</h2>
           {currentCountries.map((country) => (
             <li key={country.country_id}>{country.country_name}</li>
           ))}
@@ -102,10 +100,10 @@ const Component3 = ({ addToast }) => {
           <nav>
             <ul className="pagination">
               <li>
-                <button onClick={handlePrevious}>Previous</button>
+                <button className='pagination-button' onClick={handlePrevious}>Previous</button>
               </li>
               <li>
-                <button onClick={handleNext}>Next</button>
+                <button className='pagination-button' onClick={handleNext}>Next</button>
               </li>
             </ul>
           </nav>

@@ -24,7 +24,7 @@ const Component1 = ({ addToast }) => {
 
   const handleConfirmClick = () => {
     // Update the default notification time value with the entered value
-    addToast(`Timeout updated to: ${timeoutValue}`);
+    // addToast(`Timeout updated to: ${timeoutValue}`);
     setShowPopup(false);
   };
 

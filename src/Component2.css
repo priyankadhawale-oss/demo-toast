@@ -1,0 +1,32 @@
+.toast-button2{
+    width: 25%;
+    padding: 12px;
+    border-radius: 5px;
+    background-color: #959FF8;
+    color: white;
+    font-size:16px;
+    border: none;
+}
+
+.toast-button2:hover{
+    background-color: #5664e2
+}
+
+  .title{
+    font-size: 17px;
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 1px;
+  }
+
+  .input-type{ 
+    margin-left: 30px;  
+    height: 25%;
+    margin-bottom: 10px;
+    width: 23% ;
+    padding: 8px;
+    border-color: #D3D3D3;
+    border-radius: 5px;
+    border-width: 1px;
+    margin-top: 0px;
+  }

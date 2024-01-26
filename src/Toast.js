@@ -33,8 +33,8 @@ const Toast = ({ message, onClose, onMouseEnter, onMouseLeave }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div >{message} &ensp;
-      <button onClick={onClose}>X</button></div>
+      <div className=''>{message}&ensp;
+      <button onClick={onClose} style={{border:'none', background:'#9AE09A', marginRight:'1%' }}>X</button></div>
     </div>
   );
 };

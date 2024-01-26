@@ -14,27 +14,64 @@ body {
 }
 
 .red-header {
+  font-size: 20px;
   background-color: #D14242;
-  padding:20px;
   color: white;
 }
 
-.red-header nav ul {
+.navbar-container {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
   list-style: none;
+  /* margin: 0;
+  padding: 0;  */
+}
+
+/* .navbar-container li {
+  margin-right: 5px; /* Add spacing between navbar items */
+
+.flex-grow {
+  flex-grow: 1;
+  
+}
+.navbar-button {
+  background-color: #D14242;/* Set the initial background color for buttons */
+  /* size: 20px; */
+}
+.navbar-button:hover,
+.navbar-button.active{
+  background-color: #B33131; /* Change color on hover */
+  color: white; /* Change text color on hover */
+  text-decoration: none; /* Remove underline on hover */
+  cursor: pointer; /* Add pointer cursor on hover */
+
+}
+.component-button{
+  /* background-color: #D14242; */
+  height: 30px;
+  margin: 0%;
+}
+
+ .red-header nav ul {
+  list-style: none;
+  font-size: 13px;
   padding: 0;
   margin: 0;
 }
 
 .red-header nav ul li {
   display: inline;
-  margin-right: 20px;
+  align-items: right;
+  padding: 15px;
 }
 
 .red-header nav a {
   text-decoration: none;
   color: white;
-}
-
+ 
+} 
+ 
 main {
   flex: 1;
   padding: 20px;
