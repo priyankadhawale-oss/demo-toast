@@ -3,14 +3,15 @@
 import React, { useState, useEffect } from 'react';
 import './Toast.css';
 
-const Toast = ({ message, onClose, onMouseEnter, onMouseLeave }) => {
+const Toast = ({ message, onClose, onMouseEnter, onMouseLeave, setTimeoutValue }) => {
   const [isVisible, setIsVisible] = useState(true);
+  const timeoutValue= isNaN(setTimeoutValue)?  7000: `${setTimeoutValue}`;
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
       onClose();
-    }, 7000);
+    }, timeoutValue);
 
     return () => clearTimeout(timer);
   }, [onClose]);
@@ -23,7 +24,7 @@ const Toast = ({ message, onClose, onMouseEnter, onMouseLeave }) => {
     const timer = setTimeout(() => {
       setIsVisible(false);
       onClose();
-    }, 7000);
+    }, timeoutValue);
     onMouseLeave(timer);
   };
 

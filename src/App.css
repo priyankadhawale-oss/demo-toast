@@ -1,4 +1,4 @@
-/* src/App.css */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -17,19 +17,23 @@ body {
   font-size: 20px;
   background-color: #D14242;
   color: white;
+  height: 54px;
+}
+
+.red-header-text{
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: 100%;
+  font-family: sans-serif;
+  font-size: 20px;
+  margin-left: 5px;
 }
 
 .navbar-container {
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   list-style: none;
-  /* margin: 0;
-  padding: 0;  */
 }
-
-/* .navbar-container li {
-  margin-right: 5px; /* Add spacing between navbar items */
 
 .flex-grow {
   flex-grow: 1;
@@ -37,7 +41,10 @@ body {
 }
 .navbar-button {
   background-color: #D14242;/* Set the initial background color for buttons */
-  /* size: 20px; */
+  width: 108px;
+  height: 54px;
+  margin:0%;
+  padding:0%
 }
 .navbar-button:hover,
 .navbar-button.active{
@@ -78,10 +85,12 @@ main {
 }
 
 .grey-footer {
-  font-weight: bold;
-  font-size: medium;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: sans-serif;
   background-color: #D3D3D3;
-  padding: 3px;
+  /* padding: 1px; */
   color: #818181;
   text-align: center;
+  height: 51px;
 }

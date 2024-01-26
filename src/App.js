@@ -20,7 +20,7 @@ function App() {
         <header className="red-header">
           <nav>
             <ul className="navbar-container">
-              <li style={{fontSize:'20px'}}activeClassName="active"><Link to="/">Header</Link></li>
+              <li className="red-header-text" activeClassName="active"><Link to="/">Header</Link></li>
               <li className="flex-grow"></li>
               <li><NavItem to="/component1" activeClassName="active" text="First Component"/></li>
               <li><NavItem to="/component2" activeClassName="active" text="Second Component"/></li>
@@ -32,7 +32,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Navigate to="/component1" />} />
-            <Route path="/component1" element={<Component1 addToast={addToast}/>} />
+            <Route path="/component1" element={<Component1 addToast={addToast} />} />
             <Route path="/component2" element={<Component2 addToast={addToast} />} />
             <Route path="/component3" element={<Component3 addToast={addToast}/>} />
           </Routes>

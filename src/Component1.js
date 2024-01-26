@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
-import './Popup.css';
+import './ConfigureTimeout.css';
 
 const Component1 = ({ addToast }) => {
   const [clickCount, setClickCount] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
-  const [timeoutValue, setTimeoutValue] = useState(7);
+  const [timeoutValue, setTimeoutValue] = useState(0);
 
   
   const handleClick = () => {
     setClickCount((prevCount) => prevCount + 1);
-    addToast(`Testing : ${clickCount + 1}`);
+    addToast(`Testing : ${clickCount + 1}`, timeoutValue);
   };
 
   const handleCogClick = () => {
@@ -23,24 +23,22 @@ const Component1 = ({ addToast }) => {
   };
 
   const handleConfirmClick = () => {
-    // Update the default notification time value with the entered value
-    // addToast(`Timeout updated to: ${timeoutValue}`);
     setShowPopup(false);
   };
 
   const handleTimeoutChange = (event) => {
     const newValue = parseInt(event.target.value, 10);
-    setTimeoutValue(isNaN(newValue) ? 0 : newValue);
+    setTimeoutValue(newValue*1000);
   };
 
   return (
     <div>
-      <button onClick={handleClick} style={{ margin: '20px' }} className='toast-button'>
+      <button onClick={handleClick} style={{ marginLeft: '30px', marginTop:'30px', marginRight:'20px' }} className='toast-button'>
         Show Toast Message
       </button>
+      {/* <ConfigureTimeout/> */}
       <button className='setting-icon'><FontAwesomeIcon icon={faCog} onClick={handleCogClick} style={{ cursor: 'pointer' }} /></button>
-
-      {showPopup && (
+       {showPopup && (
         <div className="popup-container">
           <div className="popup">
             <span onClick={handlePopupClose} className="close">
@@ -50,7 +48,7 @@ const Component1 = ({ addToast }) => {
             <input
               type="number"
               id="timeout"
-              value={timeoutValue}
+              //value={timeoutValue}
               onChange={handleTimeoutChange}
             />
         </div>

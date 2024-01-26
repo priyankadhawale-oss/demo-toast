@@ -34,15 +34,18 @@
     cursor: not-allowed;
   }
   .title{
-    font-size: 17px;
+    font-size: 16px;
     margin-left: 30px;
     margin-top: 30px;
     margin-bottom: 10px;
+    color:#111111;
+    font-family: sans-serif;
+    font-weight: 400;
   }
   .input-type{   
-    height: 25%;
+    height: 24%;
     margin-bottom: 10px;
-    width: 23% ;
+    width: 21.2% ;
     padding: 9px;
     border-color: #D3D3D3;
     border-radius: 5px;
@@ -51,6 +54,8 @@
   
   .toast-button2{   
     padding: 12px;
+    width:300px;
+    height:40px;
     border-radius: 5px;
     background-color: #959FF8;
     color: white;
@@ -58,14 +63,14 @@
     border: none;
     text-align: center;
     margin-left: 30px;
-    margin-top:15px;
+    margin-top:10px;
 }
 .toast-button2:hover{
     background-color: #5664e2
 }
 
-.Component3{
+/* .Component3{
     display: flex;
     float:left
-}
+} */
 

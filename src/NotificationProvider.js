@@ -2,14 +2,15 @@
 
 import React, { useState } from 'react';
 import Toast from './Toast';
-
+//import './NotificationProvider.css';
 const NotificationProvider = ({ children }) => {
   const [toasts, setToasts] = useState([]);
 
-  const addToast = (message) => {
+  const addToast = (message, timeout) => {
     const newToast = {
       id: Date.now(),
       message,
+      timeout,
     };
 
     setToasts((prevToasts) => [...prevToasts, newToast]);
@@ -30,13 +31,14 @@ const NotificationProvider = ({ children }) => {
   };
 
   return (
-    <div>
+    <div >
       {toasts.map((toast) => (
         <Toast
           key={toast.id}
           message={toast.message}
           onClose={() => removeToast(toast.id)}
           onMouseLeave={() => handleMouseLeave(toast.timer)}
+          setTimeoutValue={toast.timeout}
         />
       ))}
       {children(addToast)}

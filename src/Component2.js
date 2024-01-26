@@ -3,19 +3,23 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
-import './Popup.css';
 import './Component2.css';
 const Component2 = ({ addToast }) => {
   const [inputValue, setInputValue] = useState('');
   const [showPopup, setShowPopup] = useState(false);
-  const [timeoutValue, setTimeoutValue] = useState(7);
+  const [timeoutValue, setTimeoutValue] = useState(7000);
+  const [clickCount, setClickCount] = useState(0);
+  
 
   const handleClick = () => {
-    addToast(inputValue);
+    setClickCount((prevCount) => prevCount + 1);
+    addToast(isNaN(inputValue)? `${inputValue}:${clickCount + 1}`: `Testing : ${clickCount + 1}`, timeoutValue);
+    setInputValue('');
   };
 
   const handleCogClick = () => {
     setShowPopup(true);
+    
   };
 
   const handlePopupClose = () => {
@@ -23,20 +27,18 @@ const Component2 = ({ addToast }) => {
   };
 
   const handleConfirmClick = () => {
-    // Update the default notification time value with the entered value
-    //addToast(`Timeout updated to: ${timeoutValue}`);
     setShowPopup(false);
   };
 
   const handleTimeoutChange = (event) => {
     const newValue = parseInt(event.target.value, 10);
-    setTimeoutValue(isNaN(newValue) ? 0 : newValue);
+    setTimeoutValue(newValue*1000);
   };
 
   return (
     <div>
       <div className='title'>Enter Custom Toast Text
-      <button className='setting-icon' style={{marginLeft: '160px'}} ><FontAwesomeIcon icon={faCog} onClick={handleCogClick} style={{ cursor: 'pointer'}} /></button> 
+      <button className='setting-icon' style={{marginLeft: '147px'}}><FontAwesomeIcon icon={faCog} onClick={handleCogClick} style={{ cursor: 'pointer'}} /></button> 
       </div>
       <div>
         <input
@@ -57,7 +59,6 @@ const Component2 = ({ addToast }) => {
       <input
         type="number"
         id="timeout"
-        value={timeoutValue}
         onChange={handleTimeoutChange}
       />
   </div>
@@ -67,7 +68,7 @@ const Component2 = ({ addToast }) => {
       )}
       <div>
       <button onClick={handleClick} style={{ marginTop: '10px',marginLeft: '30px'}} className='toast-button2' >
-      Show Custom Toast Text
+      Show Custom Toast Message
       </button>
       </div>
     </div>

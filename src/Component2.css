@@ -13,10 +13,14 @@
 }
 
   .title{
-    font-size: 17px;
-    margin-left: 30px;
-    margin-top: 30px;
-    margin-bottom: 1px;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight:400;
+    color:#111111;
+    margin-left: 51px;
+    margin-top: 51px;
+    margin-right: 147px;
+    /* margin-bottom: 1px; */
   }
 
   .input-type{ 
@@ -24,9 +28,8 @@
     height: 25%;
     margin-bottom: 10px;
     width: 23% ;
-    padding: 8px;
+    /* padding: 8px; */
     border-color: #D3D3D3;
     border-radius: 5px;
     border-width: 1px;
-    margin-top: 0px;
   }
