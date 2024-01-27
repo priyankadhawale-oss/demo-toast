@@ -40,7 +40,7 @@ body {
   
 }
 .navbar-button {
-  background-color: #D14242;/* Set the initial background color for buttons */
+  background-color: #D14242;
   width: 108px;
   height: 54px;
   margin:0%;
@@ -48,14 +48,13 @@ body {
 }
 .navbar-button:hover,
 .navbar-button.active{
-  background-color: #B33131; /* Change color on hover */
-  color: white; /* Change text color on hover */
-  text-decoration: none; /* Remove underline on hover */
-  cursor: pointer; /* Add pointer cursor on hover */
+  background-color: #B33131; 
+  color: white; 
+  text-decoration: none; 
+  cursor: pointer; 
 
 }
 .component-button{
-  /* background-color: #D14242; */
   height: 30px;
   margin: 0%;
 }
@@ -89,7 +88,6 @@ main {
   font-size: 18px;
   font-family: sans-serif;
   background-color: #D3D3D3;
-  /* padding: 1px; */
   color: #818181;
   text-align: center;
   height: 51px;

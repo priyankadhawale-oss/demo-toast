@@ -92,7 +92,6 @@ const Component3 = ({ addToast }) => {
       
     (<div>
       <div>
-        {/* Pagination */}
         {countries.length > countriesPerPage && (
           <nav>
             <div>

@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link, Routes, Navigate, useNavigate, useLocation  } from 'react-router-dom';
@@ -6,10 +5,6 @@ import Component1 from './Component1';
 import Component2 from './Component2';
 import Component3 from './Component3';
 import NotificationProvider from './NotificationProvider';
-
-
-//import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-//import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
 
 function App() {
   return (
@@ -47,7 +42,7 @@ function App() {
     </Router>
   );
 }
-// Custom component for clickable list item
+
 function NavItem({ to, text }) {
   const navigate = useNavigate();
   const location = useLocation();

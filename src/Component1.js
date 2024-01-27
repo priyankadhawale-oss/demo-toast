@@ -36,7 +36,6 @@ const Component1 = ({ addToast }) => {
       <button onClick={handleClick} style={{ marginLeft: '30px', marginTop:'30px', marginRight:'20px' }} className='toast-button'>
         Show Toast Message
       </button>
-      {/* <ConfigureTimeout/> */}
       <button className='setting-icon'><FontAwesomeIcon icon={faCog} onClick={handleCogClick} style={{ cursor: 'pointer' }} /></button>
        {showPopup && (
         <div className="popup-container">
@@ -48,7 +47,6 @@ const Component1 = ({ addToast }) => {
             <input
               type="number"
               id="timeout"
-              //value={timeoutValue}
               onChange={handleTimeoutChange}
             />
         </div>
