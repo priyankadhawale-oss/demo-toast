@@ -6,7 +6,7 @@ import './ConfigureTimeout.css';
 const Component1 = ({ addToast }) => {
   const [clickCount, setClickCount] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
-  const [timeoutValue, setTimeoutValue] = useState(0);
+  const [timeoutValue, setTimeoutValue] = useState(7000);
 
   
   const handleClick = () => {
