@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+A Mini Toast Notification Library using React.js.
+Reference Website: https://unthread-logic-assignment.netlify.app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Layout:
+The main component has a header section, a navigation section, and a
+body section.
 
-## Available Scripts
+Notification specifications:
+It is visible from the main application's bottom center.
 
-In the project directory, you can run:
+It is there for 7 seconds (the default notification time), after which it fades out, but when the user mouses over the toast before it fades out, the toast timer resets, and it is there until the notification time.
 
-### `npm start`
+7 seconds are user-configurable.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+If the user clicks on the "x" icon it disappears immediately.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The component is made in such a way that it can handle multiple
+messages. If toast is already displayed, other queued-up messages will
+be displayed alongside the currently displayed toast, with the most
+recent on top. Max. 3 messages can be displayed, and the rest can be
+queued up and displayed when slots are available.
 
-### `npm test`
+"Component1" has a button, and on click, a toast notification is
+displayed with a default message.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+"Component2" has a form with an input and a button; on click, whatever
+is in the input is displayed in the toast notification.
 
-### `npm run build`
+"Component3" has a form with an input and a button. The user can enter a
+few seconds in the input field and then click on the button. Once the
+button is clicked, it does a reverse count of that many seconds, and
+once it reaches 0, it makes an API call to
+"https://api.knowmee.co/api/v1/master/get-country-list" and displays the
+list of countries with pagination.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Create two public Github repositories for this assignment 
